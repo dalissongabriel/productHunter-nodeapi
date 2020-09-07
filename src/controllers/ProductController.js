@@ -9,5 +9,10 @@ module.exports = {
     async store(req,res) {
         const products = await Product.create(req.body);
         return res.json(products)
+    },
+    async show(req,res) {
+        const { id } = req.params.id
+        const produtct = await Product.findById(id);
+        return res.json(produtct)
     }
-}
+}   
