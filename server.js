@@ -10,6 +10,7 @@ requireDir('./src/models')
 
 const Product = mongoose.model('Product');
 
+app.use(express.json())
 app.use('/',require('./src/routes'))
 
 app.listen(3000,()=>{
