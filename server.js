@@ -8,7 +8,6 @@ mongoose.connect('mongodb://localhost:1234/node-api',{ useNewUrlParser: true, us
 
 requireDir('./src/models')
 
-const Product = mongoose.model('Product');
 
 app.use(express.json())
 app.use('/',require('./src/routes'))
