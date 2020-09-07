@@ -7,8 +7,17 @@ mongoose.connect('mongodb://localhost:1234/node-api',{ useNewUrlParser: true, us
 
 requireDir('./src/models')
 
+const Product = mongoose.model('Product');
+
+
+
 app.get('/',(req,res)=>{
-    res.send('Olá Mundo!')
+    Product.create({
+        title: 'React Native',
+        description: 'Build native apps with react native',
+        url: 'https://github.com/facebook/react-native'
+    })
+    return res.send('Olá Mundo!')
 })
 
 app.listen(3000,()=>{
